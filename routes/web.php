@@ -53,6 +53,7 @@ Route::get('sub_user/edit/{id}', [SubUserController::class, 'edit'])->name('edit
 Route::post('sub_user/edit_validation', [SubUserController::class, 'edit_validation'])->name('sub_user.edit_validation');
 
 Route::get('sub_user/delete/{id}', [SubUserController::class, 'delete'])->name('delete');
+// department
 
 Route::get('department', [DepartmentController::class, 'index'])->name('department');
 
@@ -67,6 +68,7 @@ Route::get('department/edit/{id}', [DepartmentController::class, 'edit'])->name(
 Route::post('department/edit_validation', [DepartmentController::class, 'edit_validation'])->name('department.edit_validation');
 
 Route::get('department/delete/{id}', [DepartmentController::class, 'delete'])->name('delete');
+// visitor
 
 Route::get('visitor', [VisitorController::class, 'index'])->name('visitor');
 
