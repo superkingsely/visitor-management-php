@@ -6,6 +6,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubUserController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\VisitorController;
+use App\Models\Visitor;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -68,8 +70,28 @@ Route::get('department/edit/{id}', [DepartmentController::class, 'edit'])->name(
 Route::post('department/edit_validation', [DepartmentController::class, 'edit_validation'])->name('department.edit_validation');
 
 Route::get('department/delete/{id}', [DepartmentController::class, 'delete'])->name('delete');
-// visitor
 
+// visitor
 Route::get('visitor', [VisitorController::class, 'index'])->name('visitor');
 
 Route::get('visitor/fetchall', [VisitorController::class, 'fetch_all'])->name('visitor.fetchall');
+
+// patch
+
+
+Route::get('visitor/add', [VisitorController::class, 'add'])->name('add');
+
+Route::post('visitor/add_validation', [VisitorController::class, 'add_validation'])->name('visitor.add_validation');
+
+// Route::get('department/edit/{id}', [DepartmentController::class, 'edit'])->name('edit');
+
+// Route::post('department/edit_validation', [DepartmentController::class, 'edit_validation'])->name('department.edit_validation');
+
+// Route::get('department/delete/{id}', [DepartmentController::class, 'delete'])->name('delete');
+
+
+// // testing
+// Route::get('/mydata',function(){
+//     $data= Visitor::all();
+//     echo($data);
+// });

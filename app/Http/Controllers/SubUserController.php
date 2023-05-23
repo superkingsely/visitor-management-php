@@ -39,6 +39,7 @@ class SubUserController extends Controller
                     ->make(true);
         }
     }
+    // add btn nd page
 
     function add()
     {
@@ -64,7 +65,7 @@ class SubUserController extends Controller
 
         return redirect('sub_user')->with('success', 'New User Added');
     }
-
+// edit
     public function edit($id)
     {
         $data = User::findOrFail($id);
