@@ -26,6 +26,9 @@ class CustomAuthController extends Controller
 
         if(Auth::attempt($credential))
         {
+            // Visitor::where('user_id', Auth::User()->id)->update([
+            //     'visitor_status'=>"In"
+            // ]);
             return redirect()->intended('dashboard')->withSuccess('Login');
         }
 

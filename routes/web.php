@@ -77,17 +77,18 @@ Route::get('visitor', [VisitorController::class, 'index'])->name('visitor');
 Route::get('visitor/fetchall', [VisitorController::class, 'fetch_all'])->name('visitor.fetchall');
 
 // patch
-
+// add
 
 Route::get('visitor/add', [VisitorController::class, 'add'])->name('add');
 
 Route::post('visitor/add_validation', [VisitorController::class, 'add_validation'])->name('visitor.add_validation');
 
-// Route::get('department/edit/{id}', [DepartmentController::class, 'edit'])->name('edit');
+// edit
+Route::get('visitor/view/{id}', [VisitorController::class, 'edit'])->name('edit');
 
-// Route::post('department/edit_validation', [DepartmentController::class, 'edit_validation'])->name('department.edit_validation');
+Route::post('visitor/edit_validation', [VisitorController::class, 'edit_validation'])->name('visitor.edit_validation');
 
-// Route::get('department/delete/{id}', [DepartmentController::class, 'delete'])->name('delete');
+Route::get('visitor/delete/{id}', [DepartmentController::class, 'delete'])->name('delete');
 
 
 // // testing

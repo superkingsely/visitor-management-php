@@ -19,8 +19,7 @@ class Visitor extends Model
                 'visitor_reason_to_meet', 
                 'visitor_enter_time', 
                 'visitor_outing_remark', 
-                'visitor_out_time', 
-                'visitor_status', 
-                'visitor_enter_by'
+                'visitor_out_time'
+                
     ];
 }

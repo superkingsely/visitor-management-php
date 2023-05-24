@@ -88,21 +88,7 @@
 		        		<span class="text-danger">{{ $errors->first('visitor_out_time') }}</span>
 		        		@endif
 		        	</div>
-					<div class="form-group mb-3">
-		        		<label><b>Status</b></label>
-		        		<input type="text" name="visitor_status" class="form-control" placeholder="Status" />
-		        		@if($errors->has('visitor_status'))
-		        		<span class="text-danger">{{ $errors->first('visitor_status') }}</span>
-		        		@endif
-		        	</div>
-					<div class="form-group mb-3">
-		        		<label><b>Enter by</b></label>
-		        		<input type="text" name="visitor_enter_by" class="form-control" placeholder="value" />
-		        		@if($errors->has('visitor_enter_by'))
-		        		<span class="text-danger">{{ $errors->first('visitor_enter_by') }}</span>
-		        		@endif
-		        	</div>
-		        	
+					
 		        	
 		        	<div class="form-group mb-3">
 		        		<input type="submit" class="btn btn-primary" value="Add" />

@@ -25,12 +25,13 @@
 					<thead>
 						<tr>
 							<th>Visitor Name</th>
+							<th>Visitor Email</th>
+							<th>Mobile number</th>
+							<th>Address</th>
 							<th>Meet Person Name</th>
 							<th>Department</th>
 							<th>In Time</th>
 							<th>Out Time</th>
-							<th>Status</th>
-							<th>Enter By</th>
 							<th>Action</th>
 						</tr>
 					</thead>
@@ -54,6 +55,18 @@ $(document).ready(function(){
 				name: 'visitor_name'
 			},
 			{
+				data:'visitor_email',
+				name: 'visitor_email'
+			},
+			{
+				data:'visitor_mobile_no',
+				name: 'visitor_mobile_no'
+			},
+			{
+				data:'visitor_address',
+				name: 'visitor_address'
+			},
+			{
 				data: 'visitor_meet_person_name',
 				name: 'visitor_meet_person_name'
 			},
@@ -69,14 +82,7 @@ $(document).ready(function(){
 				data:'visitor_out_time',
 				name:'visitor_out_time'
 			},
-			{
-				data:'visitor_status',
-				name:'visitor_status'
-			},
-			{
-				data:'name',
-				name:'name'
-			},
+			
 			{
 				data:'action',
 				name:'action',
@@ -98,6 +104,8 @@ if(confirm("Are you sure you want to remove it?"))
 }
 
 });
+
+
 </script>
 
 @endsection

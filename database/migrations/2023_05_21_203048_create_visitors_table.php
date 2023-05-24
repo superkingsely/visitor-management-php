@@ -23,8 +23,6 @@ return new class extends Migration
             $table->string('visitor_enter_time');
             $table->string('visitor_outing_remark');
             $table->string('visitor_out_time');
-            $table->enum('visitor_status', ['In', 'Out']);
-            $table->integer('visitor_enter_by');
             $table->timestamps();
         });
     }
