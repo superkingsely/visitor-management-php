@@ -15,6 +15,12 @@
         .background-overlay{
             background-color: rgba(48, 0, 90, 0.468);
         }
+        .logo{
+            width: 40px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 2px;
+        }
     </style>
 </head>
 <body>
@@ -35,8 +41,12 @@
     <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('js/dataTables.bootstrap5.min.js')}}"></script>
 
-    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Anchor university</a>
+    <header class="gx-0 p-0 gy-0 navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        
+        <a class="fw-bold navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">
+            <img class="logo m-0" src="/IMG-20230503-WA0001.jpg" alt="">
+            Anchor university
+        </a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
