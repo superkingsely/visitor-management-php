@@ -1,8 +1,102 @@
-@extends('dashboard')
-@section('home')
-    <div class="container-fluid">
-        <h1 class="text-center">
-            Welcome
-        </h1>
-    </div>
-@endsection
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visitor Management System in Laravel</title>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" />
+    <style>
+        .background{
+            /* border: 20px solid; */
+            background-image: url('/IMG-20230503-WA0001.jpg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            /* background-image: url('{{asset('.../public/IMG-20230503-WA0001.jpg')}}'); */
+        }
+        .background-overlay{
+            background-color: rgba(48, 0, 90, 0.468);
+        }
+    </style>
+</head>
+<body>
+
+    @guest
+
+    {{-- <h1 class="mt-4 mb-2 text-center">Visitor Management System</h1>
+    <h1 class="mt-4 mb-5 text-center">Anchor university</h1>
+
+    @yield('content') --}}
+
+    @else
+
+    <link rel="stylesheet" href="{{asset('css/dashboard.css')}}">
+    <link rel="stylesheet" href="{{asset('css/dataTables.bootstrap5.min.css')}}">
+
+    <script src="{{asset('js/jquery.js')}}"></script>
+    <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('js/dataTables.bootstrap5.min.js')}}"></script>
+
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Anchor university</a>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-nav">
+            <div class="nav-item text-nowrap">
+                <a class="nav-link px-3" href="#">Welcome, {{ Auth::user()->email }}</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid gx-0" style="min-height: 100vh">
+        <div class="row" style="height: 100vh">
+            <nav style="height: 100%" id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::segment(1) == 'home' ? 'active' : '' }}" aria-current="page" href="/home">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::segment(1) == 'profile' ? 'active' : '' }}" aria-current="page" href="/profile">Profile</a>
+                        </li>
+                        @if(Auth::user()->type == 'Admin')
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::segment(1) == 'sub_user' ? 'active' : '' }}" aria-current="page" href="/sub_user">Sub User</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::segment(1) == 'department' ? 'active' : '' }}" aria-current="page" href="/department">Department</a>
+                        </li>
+                        @endif
+
+                        {{-- <li class="nav-item">
+                            <a class="nav-link {{ Request::segment(1) == 'visitor' ? 'active' : '' }}" href="/visitor">Visitor</a>
+                        </li> --}}
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('logout') }}">Logout</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </nav>
+            <main style="height: 100%;" class="gx-0 col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <!--<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">!-->
+                {{-- @yield('content') --}}
+                <div style="height:100% " class="container-fluid ">
+                    <div style="height:100%;" class="row  background ">
+                        <div class="col background-overlay text-center ">
+                            <h1 class="text-light fw-bolder">WELCOME TO ANCHOR UNIVERSITY</h1>
+                        </div>
+                    </div>
+                </div>
+                    
+                <!--</div>!-->
+            </main>
+        </div>
+    </div>    
+
+    @endguest
+
+    {{-- <script src="{{ asset('js/bootstrap.js') }}"></script> --}}
+</body>
+</html>

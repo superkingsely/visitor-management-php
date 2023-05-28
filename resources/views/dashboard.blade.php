@@ -3,6 +3,19 @@
 <head>
     <title>Visitor Management System in Laravel</title>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" />
+    <style>
+        .background{
+            /* border: 20px solid; */
+            background-image: url('/IMG-20230503-WA0001.jpg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            /* background-image: url('{{asset('.../public/IMG-20230503-WA0001.jpg')}}'); */
+        }
+        .background-overlay{
+            background-color: rgba(48, 0, 90, 0.468);
+        }
+    </style>
 </head>
 <body>
 
@@ -34,13 +47,13 @@
         </div>
     </header>
 
-    <div class="container-fluid">
-        <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+    <div class="container-fluid gx-0" style="min-height: 100vh">
+        <div class="row" style="height:100vh">
+            <nav style="height: 100%" id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link {{ Request::segment(1) == 'dashboard' ? 'active' : '' }}" aria-current="page" href="/dashboard">Dashboard</a>
+                            <a class="nav-link {{ Request::segment(1) == 'home' ? 'active' : '' }}" aria-current="page" href="/home">Dashboard</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ Request::segment(1) == 'profile' ? 'active' : '' }}" aria-current="page" href="/profile">Profile</a>
@@ -54,9 +67,9 @@
                         </li>
                         @endif
 
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link {{ Request::segment(1) == 'visitor' ? 'active' : '' }}" href="/visitor">Visitor</a>
-                        </li>
+                        </li> --}}
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}">Logout</a>
@@ -66,11 +79,10 @@
 
                 </div>
             </nav>
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <main style="height:100%" class="gx-0 col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <!--<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">!-->
 
                 @yield('content')
-                @yield('home')
                     
                 <!--</div>!-->
             </main>

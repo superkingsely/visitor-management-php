@@ -29,7 +29,7 @@ class CustomAuthController extends Controller
             // Visitor::where('user_id', Auth::User()->id)->update([
             //     'visitor_status'=>"In"
             // ]);
-            return redirect()->intended('dashboard')->withSuccess('Login');
+            return redirect()->intended('home')->withSuccess('Login');
         }
 
         return redirect('login')->with('error', 'Login Details are not valid');
@@ -60,12 +60,12 @@ class CustomAuthController extends Controller
         return redirect('registration')->with('success', 'Registration Complete');
     }
 
-    public function dashboard()
+    public function home()
     {
 
         if(Auth::check())
         {
-            return view('dashboard');
+            return view('home');
         }
 
         return redirect('login');
